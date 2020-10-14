@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="MixUploader.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MixUploader"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="410,75,0,0" Name="Title" Text="Shotos Mix Uploader" 
+                   FontFamily="Calibri" FontSize="40" TextAlignment="Center"
+                   TextWrapping="Wrap" VerticalAlignment="Top" Height="67" Width="744" SelectionChanged="TextBlock_SelectionChanged"/>
+        <TextBox HorizontalAlignment="Left" Margin="161,207,0,0" Text="" Name="FileLocationTextBox" VerticalAlignment="Top" Height="31" Width="744"/>
+        <Button Content="Browse" HorizontalAlignment="Left" Name="BrowseButton" Margin="929,207,0,0" 
+                VerticalAlignment="Top" Height="31" Width="111" Click="BrowseButton_Click"/>
+
+        <!-- Upload Site Checkbox Area -->
+        <TextBlock HorizontalAlignment="Left" Margin="1186,223,0,0" Text="Upload Site:" FontSize="16" TextDecorations="Underline" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <CheckBox Content="Mixcloud" HorizontalAlignment="Left" Name="MixcloudCheckbox" Margin="1186,274,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Soundcloud" HorizontalAlignment="Left" Name="SoundcloudCheckbox" Margin="1186,324,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="161,284,0,0" Text="Upload Title:" TextWrapping="Wrap" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged_1"
+                   FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" Margin="161,322,0,0" 
+                 FontFamily="Calibri"
+                 Text="" Name="UploadTitleTextbox" VerticalAlignment="Top" Height="34" Width="744"/>
+        <TextBlock HorizontalAlignment="Left" Margin="161,389,0,0" Text="Description:" TextWrapping="Wrap" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged_1"
+                   FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" Margin="161,429,0,0" Text="" Name="DescriptionTextbox" VerticalAlignment="Top" Height="211" Width="744"/>
+        <TextBlock HorizontalAlignment="Left" Margin="161,680,0,0" Text="Tracklist:" TextWrapping="Wrap" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged_1"
+                   FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" Margin="161,724,0,0" Text="" Name="TracklistTextbox" VerticalAlignment="Top" Height="182" Width="744"/>
+        <Button Content="Send" HorizontalAlignment="Left" Margin="985,724,0,0" Name="SendFileButton"  VerticalAlignment="Top" Height="182" Width="412" Click="SendFileButton_Click"/>
+
+
+
+    </Grid>
+</Page>
