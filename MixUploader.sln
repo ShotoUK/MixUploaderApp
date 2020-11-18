@@ -9,12 +9,7 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
 		Debug|ARM64 = Debug|ARM64
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|ARM = Release|ARM
-		Release|ARM64 = Release|ARM64
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
+		Debug|Default = Debug|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|ARM.ActiveCfg = Debug|ARM
@@ -23,29 +18,34 @@ Global
 		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|ARM64.ActiveCfg = Debug|ARM64
 		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|ARM64.Build.0 = Debug|ARM64
 		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|ARM64.Deploy.0 = Debug|ARM64
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|x64.ActiveCfg = Debug|x64
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|x64.Build.0 = Debug|x64
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|x64.Deploy.0 = Debug|x64
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|x86.ActiveCfg = Debug|x86
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|x86.Build.0 = Debug|x86
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|x86.Deploy.0 = Debug|x86
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|ARM.ActiveCfg = Release|ARM
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|ARM.Build.0 = Release|ARM
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|ARM.Deploy.0 = Release|ARM
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|ARM64.ActiveCfg = Release|ARM64
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|ARM64.Build.0 = Release|ARM64
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|ARM64.Deploy.0 = Release|ARM64
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|x64.ActiveCfg = Release|x64
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|x64.Build.0 = Release|x64
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|x64.Deploy.0 = Release|x64
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|x86.ActiveCfg = Release|x86
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|x86.Build.0 = Release|x86
-		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Release|x86.Deploy.0 = Release|x86
+		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|Default.ActiveCfg = Debug|x86
+		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|Default.Build.0 = Debug|x86
+		{A5CD5A9B-FA96-451D-8994-6F3743D72FC6}.Debug|Default.Deploy.0 = Debug|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DC65D111-64C1-41B2-8FC1-BCB50A0FB2CA}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|Default = Debug|Default
+		Release|ARM = Release|ARM
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		MixUploader (Build Only)|ARM = MixUploader (Build Only)|ARM
+		MixUploader (Build Only)|ARM64 = MixUploader (Build Only)|ARM64
+		MixUploader (Build Only)|x64 = MixUploader (Build Only)|x64
+		MixUploader (Build Only)|x86 = MixUploader (Build Only)|x86
+		Release|ARM = Release|ARM
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 EndGlobal

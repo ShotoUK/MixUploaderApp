@@ -112,18 +112,12 @@ namespace MixUploader
                 await msg.ShowAsync();
 
             }
-
-            if (SoundcloudCheckbox.IsChecked == true)
+            else
             {
-                await post.UploadToSoundcloudAsync(UploadSite.audiofile);
-
-                string responsebody = post.responsebody;
-
-                var msg = new MessageDialog(responsebody);
-
-                await msg.ShowAsync();
-
+                //Returns message if no upload site checked.
+                var msg = new MessageDialog("No site checked. Please check Mixcloud");
             }
+
         }
     }
 }

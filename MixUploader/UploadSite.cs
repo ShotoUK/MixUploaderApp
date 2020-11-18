@@ -26,7 +26,6 @@ namespace MixUploader
 
         public static long MixcloudMaxBytes { get; set; } = 4294967296;
 
-        public static string SoundcloudAuthCode { get; set; } = "3aLMAp4mbrN5SSb5sp4tAcP3sq7naRck";
 
 
         public async Task UploadToMixcloudAsync(byte[] file)
@@ -102,67 +101,6 @@ namespace MixUploader
             //httpreponse.EnsureSuccessStatusCode();
             responsebody = await httpreponse.Content.ReadAsStringAsync();
 
-        }
-
-        public async Task UploadToSoundcloudAsync(byte[] file)
-        {
-            try
-            {
-                /*Live Mixcloud URL*/
-                //Uri uri = new Uri($"https://api.mixcloud.com/upload/?access_token={MixcloudAuthCode}");
-
-                /*Test Dump URL*/
-                Uri uri = new Uri($"http://ptsv2.com/t/vmygd-1602012853/post?access_token={MixcloudAuthCode}");
-
-                using (var client = new HttpClient())
-                {
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("*/*"));
-                    client.DefaultRequestHeaders.AcceptEncoding.TryParseAdd("gzip");
-                    client.DefaultRequestHeaders.AcceptEncoding.TryParseAdd("deflate");
-                    client.DefaultRequestHeaders.AcceptEncoding.TryParseAdd("br");
-
-                    using (var formcontent = new MultipartFormDataContent("Upload----" /*+ DateTime.Now.ToString(CultureInfo.InvariantCulture)*/))
-                    {
-
-                        formcontent.Headers.ContentType.MediaType = "multipart/form-data";
-
-                        formcontent.Add(new ByteArrayContent(file, 0, file.Length), "mp3", filename);
-                        formcontent.Add(new StringContent(filename), "name");
-                        formcontent.Add(new StringContent("True"), "unlisted");
-
-                        HttpResponseMessage httpreponse = new HttpResponseMessage();
-
-                        if (Convert.ToInt64(file.Length) > MixcloudMaxBytes)
-                        {
-                            Console.WriteLine("Filesize too large");
-                            responsebody = "Mixcloud: Filesize too large";
-                        }
-                        else
-                        {
-                            using (var Upload = await client.PostAsync(uri, formcontent))
-                            {
-                                try
-                                {
-                                    Upload.EnsureSuccessStatusCode();
-
-                                    responsebody = "Mixcloud: Upload Successful";
-                                }
-                                catch (HttpRequestException ex)
-                                {
-                                    responsebody = $"{ex.Source} says {ex.Message} - Response: {Upload.ReasonPhrase.ToString()}";
-                                }
-                            }
-                        }
-
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
         }
     }
 }
