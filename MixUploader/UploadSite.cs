@@ -40,10 +40,13 @@ namespace MixUploader
 
                 using (var client = new HttpClient())
                 {
+                    client.Timeout = TimeSpan.FromMinutes(10);
+
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("*/*"));
                     client.DefaultRequestHeaders.AcceptEncoding.TryParseAdd("gzip");
                     client.DefaultRequestHeaders.AcceptEncoding.TryParseAdd("deflate");
                     client.DefaultRequestHeaders.AcceptEncoding.TryParseAdd("br");
+
 
                     using (var formcontent = new MultipartFormDataContent("Upload----" /*+ DateTime.Now.ToString(CultureInfo.InvariantCulture)*/))
                     {
@@ -65,7 +68,7 @@ namespace MixUploader
                         {
                             using (var Upload = await client.PostAsync(uri, formcontent))
                             {
-                                
+
 
                                 try
                                 {
@@ -87,7 +90,7 @@ namespace MixUploader
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
  
         }

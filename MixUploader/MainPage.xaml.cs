@@ -97,6 +97,8 @@ namespace MixUploader
 
         private async void SendFileButton_Click(object sender, RoutedEventArgs e)
         {
+            UploadProgressBar.Visibility = Visibility.Visible;
+
             UploadSite.UploadTitle = UploadTitleTextbox.Text;
 
             UploadSite post = new UploadSite();
@@ -107,13 +109,21 @@ namespace MixUploader
 
                 string responsebody = post.responsebody;
 
+                UploadProgressBar.Visibility = Visibility.Collapsed;
+
                 var msg = new MessageDialog(responsebody);
 
                 await msg.ShowAsync();
 
+
+                // Clear Text Boxes
+                FileLocationTextBox.Text = "";
+
             }
             else
             {
+                UploadProgressBar.Visibility = Visibility.Collapsed;
+
                 //Returns message if no upload site checked.
                 var msg = new MessageDialog("No site checked. Please check Mixcloud");
             }
