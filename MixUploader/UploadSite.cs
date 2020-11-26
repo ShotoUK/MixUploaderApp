@@ -18,6 +18,10 @@ namespace MixUploader
 
         public static string UploadTitle { get; set; }
 
+        public static string UploadDescription { get; set; }
+
+        public static string UploadUnlisted  { get; set; } 
+
         public static byte[] audiofile { get; set; }
 
         public static string filename { get; set; }
@@ -55,7 +59,8 @@ namespace MixUploader
 
                         formcontent.Add(new ByteArrayContent(file, 0, file.Length), "mp3", filename);
                         formcontent.Add(new StringContent(UploadTitle), "name");
-                        formcontent.Add(new StringContent("True"), "unlisted");
+                        formcontent.Add(new StringContent(UploadUnlisted), "unlisted");
+                        formcontent.Add(new StringContent(UploadDescription), "description");
 
                         HttpResponseMessage httpreponse = new HttpResponseMessage();
 

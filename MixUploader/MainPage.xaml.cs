@@ -59,6 +59,7 @@ namespace MixUploader
 
                     FileLocationTextBox.Text = file.Path;
 
+
                     var filestream = await file.OpenStreamForReadAsync();
                     byte[] fileBytes = new byte[filestream.Length];
 
@@ -99,12 +100,27 @@ namespace MixUploader
         {
             UploadProgressBar.Visibility = Visibility.Visible;
 
-            UploadSite.UploadTitle = UploadTitleTextbox.Text;
-
             UploadSite post = new UploadSite();
 
+            //Set Properties in UploadSite Class
+            UploadSite.UploadTitle = UploadTitleTextbox.Text;
+
+            string DescriptionBoxText = "";
+            DescriptionTextBox.Document.GetText(Windows.UI.Text.TextGetOptions.None, out DescriptionBoxText);
+            UploadSite.UploadDescription = DescriptionBoxText;
+
+            //Attempt to send file via POST request.
             if (MixcloudCheckbox.IsChecked == true)
             {
+                if (UploadUnlistedCheckbox.IsChecked == true)
+                {
+                    UploadSite.UploadUnlisted = "True";
+                }
+                else
+                {
+                    UploadSite.UploadUnlisted = "False";
+                }
+
                 await post.UploadToMixcloudAsync(UploadSite.audiofile);
 
                 string responsebody = post.responsebody;
@@ -118,6 +134,8 @@ namespace MixUploader
 
                 // Clear Text Boxes
                 FileLocationTextBox.Text = "";
+                UploadTitleTextbox.Text = "";
+                DescriptionTextBox.Document.SetText(Windows.UI.Text.TextSetOptions.None, "");
 
             }
             else
@@ -129,5 +147,6 @@ namespace MixUploader
             }
 
         }
+
     }
 }
