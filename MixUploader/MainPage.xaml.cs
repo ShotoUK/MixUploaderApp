@@ -132,10 +132,11 @@ namespace MixUploader
                 await msg.ShowAsync();
 
 
-                // Clear Text Boxes
+                // Clear Text & Checkboxes
                 FileLocationTextBox.Text = "";
                 UploadTitleTextbox.Text = "";
                 DescriptionTextBox.Document.SetText(Windows.UI.Text.TextSetOptions.None, "");
+                UploadUnlistedCheckbox.IsChecked = false;
 
             }
             else

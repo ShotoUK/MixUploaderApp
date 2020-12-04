@@ -37,10 +37,10 @@ namespace MixUploader
             try
             {
                 /*Live Mixcloud URL*/
-                //Uri uri = new Uri($"https://api.mixcloud.com/upload/?access_token={MixcloudAuthCode}");
+                Uri uri = new Uri($"https://api.mixcloud.com/upload/?access_token={MixcloudAuthCode}");
 
                 /*Test Dump URL*/
-                Uri uri = new Uri($"http://ptsv2.com/t/vmygd-1602012853/post?access_token={MixcloudAuthCode}");
+                //Uri uri = new Uri($"http://ptsv2.com/t/vmygd-1602012853/post?access_token={MixcloudAuthCode}");
 
                 using (var client = new HttpClient())
                 {
@@ -79,7 +79,7 @@ namespace MixUploader
                                 {
                                     Upload.EnsureSuccessStatusCode();
 
-                                    responsebody = "Mixcloud: Upload Successful";
+                                    responsebody = filename + "\n Mixcloud: Upload Successful";
                                 }
                                 catch (HttpRequestException ex)
                                 {
