@@ -26,7 +26,7 @@ namespace MixUploader
 
         public static string filename { get; set; }
 
-        public static string MixcloudAuthCode { get; set; } = "3aLMAp4mbrN5SSb5sp4tAcP3sq7naRck";
+        public static string MixcloudAuthCode { get; set; } = "";
 
         public static long MixcloudMaxBytes { get; set; } = 4294967296;
 
